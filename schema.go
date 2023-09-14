@@ -29,7 +29,7 @@ type AdSystem struct {
 
 type Impression struct {
 	ID   string `xml:"id,attr,omitempty"`
-	Data string `xml:",chardata"`
+	Data string `xml:",cdata"`
 }
 
 type Creatives struct {
@@ -146,7 +146,7 @@ type Extension struct {
 }
 
 type Wrapper struct {
-	VASTAdTagURI string       `xml:"VASTAdTagURI"`
+	VASTAdTagURI string       `xml:"VASTAdTagURI,cdata"`
 	Error        string       `xml:"Error,omitempty"`
 	AdSystem     AdSystem     `xml:"AdSystem"`
 	Impression   []Impression `xml:"Impression,omitempty"`
