@@ -146,10 +146,13 @@ type Extension struct {
 }
 
 type Wrapper struct {
-	VASTAdTagURI string       `xml:"VASTAdTagURI,cdata"`
+	VASTAdTagURI VASTAdTagURI `xml:"VASTAdTagURI"`
 	Error        string       `xml:"Error,omitempty"`
 	AdSystem     AdSystem     `xml:"AdSystem"`
 	Impression   []Impression `xml:"Impression,omitempty"`
 	Creatives    Creatives    `xml:"Creatives"`
 	Extensions   *Extensions  `xml:"Extensions,omitempty"`
+}
+type VASTAdTagURI struct {
+	CDATA string `xml:",cdata"`
 }
